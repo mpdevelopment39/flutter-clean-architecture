@@ -1,10 +1,9 @@
-import 'movie_moviedb.dart';
-
+import 'movie_dto.dart';
 
 class MovieDbResponse {
   final Dates? dates;
   final int page;
-  final List<MovieMovieDB> results;
+  final List<MovieDTO> results;
   final int totalPages;
   final int totalResults;
 
@@ -19,7 +18,7 @@ class MovieDbResponse {
   factory MovieDbResponse.fromJson(Map<String, dynamic> json) => MovieDbResponse(
     dates: json["dates"] != null ? Dates.fromJson(json["dates"]) : null,
     page: json["page"],
-    results: List<MovieMovieDB>.from(json["results"].map((x) => MovieMovieDB.fromJson(x))),
+    results: List<MovieDTO>.from(json["results"].map((x) => MovieDTO.fromJson(x))),
     totalPages: json["total_pages"],
     totalResults: json["total_results"],
   );

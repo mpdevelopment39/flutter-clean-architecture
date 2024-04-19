@@ -4,7 +4,7 @@ import '../../app/injector.dart';
 import '../../domain/entities/movie.dart';
 import '../../domain/repositories/movies_repository.dart';
 import '../mappers/movie_mapper.dart';
-import '../models/moviedb/movie_details.dart';
+import '../models/moviedb/movie_details_dto.dart';
 import '../models/moviedb/moviedb_response.dart';
 
 
@@ -55,7 +55,7 @@ class MovieRepositoryImpl extends MoviesRepository {
   Future<Movie> getMovieById(String id) async {
     final Response response = await _dio.get('/movie/$id');
     if(response.statusCode != 200) throw DioException(requestOptions: RequestOptions(),message: response.statusMessage);
-    final movieDetails = MovieDetails.fromJson(response.data);
+    final movieDetails = MovieDetailsDTO.fromJson(response.data);
     final Movie movie = MovieMapper.movieDetailsToEntity(movieDetails);
     return movie;
   }

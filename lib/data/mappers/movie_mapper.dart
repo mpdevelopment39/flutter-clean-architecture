@@ -1,9 +1,9 @@
 import '../../domain/entities/movie.dart';
-import '../models/moviedb/movie_details.dart';
-import '../models/moviedb/movie_moviedb.dart';
+import '../models/moviedb/movie_dto.dart';
+import '../models/moviedb/movie_details_dto.dart';
 
 class MovieMapper {
-  static Movie movieDBToEntity(MovieMovieDB moviedb) => Movie(
+  static Movie movieDBToEntity(MovieDTO moviedb) => Movie(
     backdropPath: (moviedb.backdropPath != '') 
       ? 'https://image.tmdb.org/t/p/w500${moviedb.backdropPath}'
       : 'https://sd.keepcalms.com/i-w600/keep-calm-poster-not-found.jpg',
@@ -22,7 +22,7 @@ class MovieMapper {
     voteCount: moviedb.voteCount
   );
 
-  static Movie movieDetailsToEntity(MovieDetails moviedb) => Movie(
+  static Movie movieDetailsToEntity(MovieDetailsDTO moviedb) => Movie(
     backdropPath: (moviedb.backdropPath != '') 
       ? 'https://image.tmdb.org/t/p/w500${moviedb.backdropPath}'
       : 'https://sd.keepcalms.com/i-w600/keep-calm-poster-not-found.jpg',

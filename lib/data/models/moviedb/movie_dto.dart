@@ -1,4 +1,4 @@
-class MovieMovieDB {
+class MovieDTO {
   final String backdropPath;
   final List<int> genreIds;
   final int id;
@@ -12,7 +12,7 @@ class MovieMovieDB {
   final double voteAverage;
   final int voteCount;
 
-  MovieMovieDB({
+  MovieDTO({
     required this.backdropPath,
     required this.genreIds,
     required this.id,
@@ -27,7 +27,7 @@ class MovieMovieDB {
     required this.voteCount,
   });
 
-  factory MovieMovieDB.fromJson(Map<String, dynamic> json) => MovieMovieDB(
+  factory MovieDTO.fromJson(Map<String, dynamic> json) => MovieDTO(
     backdropPath: json["backdrop_path"] ?? '',
     genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
     id: json["id"],

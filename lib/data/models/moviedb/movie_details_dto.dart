@@ -1,5 +1,4 @@
-
-class MovieDetails {
+class MovieDetailsDTO {
   final String backdropPath;
   final BelongsToCollection? belongsToCollection;
   final int budget;
@@ -24,7 +23,7 @@ class MovieDetails {
   final double voteAverage;
   final int voteCount;
 
-  MovieDetails({
+  MovieDetailsDTO({
     required this.backdropPath,
     required this.belongsToCollection,
     required this.budget,
@@ -50,7 +49,7 @@ class MovieDetails {
     required this.voteCount,
   });
 
-  factory MovieDetails.fromJson(Map<String, dynamic> json) => MovieDetails(
+  factory MovieDetailsDTO.fromJson(Map<String, dynamic> json) => MovieDetailsDTO(
     backdropPath: json["backdrop_path"] ?? '',
     belongsToCollection: json["belongs_to_collection"] == null ? null : BelongsToCollection.fromJson(json["belongs_to_collection"]),
     budget: json["budget"],
