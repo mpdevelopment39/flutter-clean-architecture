@@ -17,7 +17,6 @@ class MoviedbDatasource extends MoviesDatasource {
     .map((moviedb) => MovieMapper.movieDBToEntity(moviedb)).toList();
   }
 
-
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
     final Response response = await injector<DioMovies>().dio.get('/movie/now_playing',
@@ -49,7 +48,6 @@ class MoviedbDatasource extends MoviesDatasource {
     );
     return _jsonToMovies(response.data);
   }
-
 
   @override
   Future<Movie> getMovieById(String id) async {

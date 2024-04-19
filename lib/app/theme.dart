@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//* Clase con la configuración del tema de la app, colores, fuentes...
 class AppTheme {
   //* Theme material
   static ThemeData materialTheme = ThemeData(

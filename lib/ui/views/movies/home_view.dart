@@ -4,7 +4,7 @@ import '../../providers/providers.dart';
 import '../../widgets/movies/movie_horizontal_listview.dart';
 import '../../widgets/movies/movies_slideshow.dart';
 import '../../widgets/shared/custom_appbar.dart';
-import '../../widgets/shared/full_screen_loader.dart';
+import '../../widgets/shared/full_screen_loading.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeView extends ConsumerStatefulWidget {
@@ -27,7 +27,7 @@ class HomeViewState extends ConsumerState<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    if(ref.watch(initialLoadingProvider)) return const FullScreenLoader();
+    if(ref.watch(initialLoadingProvider)) return const FullScreenLoading();
     
     return CustomScrollView(
       slivers: [

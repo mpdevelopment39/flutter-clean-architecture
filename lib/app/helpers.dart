@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+//* Clase de utilidades para utilizar en cualquier punto de la app
+//* Si esto llegase a crecer excesivamente se crearían clases independientes o incluso extensiones
 class Helpers {
   void hideKeyboard(BuildContext context){
     FocusScopeNode currentFocus = FocusScope.of(context);
@@ -25,7 +27,6 @@ class Helpers {
       symbol: '',
       locale: 'es'
     ).format(number);
-
     return formattedNumber;
   }
 

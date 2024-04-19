@@ -9,6 +9,7 @@ import '../../domain/entities/movie.dart';
 
 typedef SearchMoviesCallback = Future<List<Movie>> Function(String query);
 
+//* Clase para gestionar el delegate de busqueda de películas
 class SearchMovieDelegate extends SearchDelegate<Movie?>{
   final SearchMoviesCallback searchMovies;
   List<Movie> initialMovies;
@@ -25,11 +26,8 @@ class SearchMovieDelegate extends SearchDelegate<Movie?>{
 
   void _onQueryChanged( String query ) {
     isLoadingStream.add(true);
-
     if (_debounceTimer?.isActive ?? false) _debounceTimer!.cancel();
-
-    _debounceTimer = Timer(const Duration( milliseconds: 500 ), () async {
-      
+    _debounceTimer = Timer(const Duration(milliseconds: 500), () async {
       final movies = await searchMovies(query);
       initialMovies = movies;
       debouncedMovies.add(movies);
@@ -150,7 +148,7 @@ class _MovieItem extends StatelessWidget {
                     children: [
                       Icon(Icons.star_half_rounded, color: AppTheme.kMoviesYellow),
                       const SizedBox(width: 5),
-                      Text( 
+                      Text(
                         injector<Helpers>().formatNumber(movie.voteAverage, 1),
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppTheme.kMoviesYellow),
                       ),

@@ -28,13 +28,10 @@ class FavoritesViewState extends ConsumerState<FavoritesView> {
   void loadNextPage() async {
     if(isLoading || isLastPage) return;
     isLoading = true;
-
     final movies = await ref.read(favoriteMoviesProvider.notifier).loadNextPage();
     isLoading = false;
-
     if(movies.isEmpty) isLastPage = true;
   }
-
 
   @override
   Widget build(BuildContext context) {

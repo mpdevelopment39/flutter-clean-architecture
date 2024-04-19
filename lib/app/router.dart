@@ -2,6 +2,7 @@ import 'package:flutter_clean_architecture_demo/ui/pages/home_page.dart';
 import 'package:flutter_clean_architecture_demo/ui/pages/movie_page.dart';
 import 'package:go_router/go_router.dart';
 
+//* Clase para gestionar las diferentes rutas del proyecto a la hora de navegar entre pantallas
 final appRouter = GoRouter(
   initialLocation: '/home/0',
   routes: [

@@ -3,8 +3,8 @@ import 'package:flutter_clean_architecture_demo/app/constants.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sizer/sizer.dart';
 
-class FullScreenLoader extends StatelessWidget {
-  const FullScreenLoader({super.key});
+class FullScreenLoading extends StatelessWidget {
+  const FullScreenLoading({super.key});
   
   @override
   Widget build(BuildContext context) {

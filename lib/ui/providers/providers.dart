@@ -16,7 +16,6 @@ import 'notifiers/search_notifier.dart';
 import 'notifiers/storage_movies_notifier.dart';
 
 //* Storage providers
-
 final localStorageRepositoryProvider = Provider((ref) {
   return LocalStorageRepositoryImpl(injector<IsarDatasource>());
 });
@@ -26,7 +25,6 @@ final favoriteMoviesProvider = StateNotifierProvider<StorageMoviesNotifier,Map<i
 });
 
 //* Actors providers
-
 final actorsRepositoryProvider = Provider((ref) {
   return ActorRepositoryImpl(injector<ActorMovieDbDatasource>());
 });
@@ -36,7 +34,6 @@ final actorsByMovieProvider = StateNotifierProvider<ActorsByMovieNotifier, Map<S
 });
 
 //* Search providers
-
 final searchQueryProvider = StateProvider<String>((ref) => '');
 
 final searchedMoviesProvider = StateNotifierProvider<SearchedMoviesNotifier, List<Movie>>((ref) {
@@ -48,7 +45,6 @@ final isFavoriteProvider = FutureProvider.family.autoDispose((ref, int movieId) 
 });
 
 //* Movies providers
-
 final movieRepositoryProvider = Provider((ref) {
   return MovieRepositoryImpl(injector<MoviedbDatasource>());
 });

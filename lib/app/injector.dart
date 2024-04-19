@@ -16,6 +16,7 @@ import 'package:path_provider/path_provider.dart';
 import '../domain/entities/movie.dart';
 import 'dio_movies.dart';
 
+//* Clase para gestionar la inyección de dependencias del proyecto
 final GetIt injector = GetIt.instance;
 
 class Injector {
@@ -37,7 +38,6 @@ class Injector {
         inspector: true,directory: dir.path
       );
     });
-
     injector.registerSingleton<DioMovies>(DioMovies());
     injector.registerLazySingleton<Helpers>(() => Helpers());
     
@@ -50,7 +50,6 @@ class Injector {
     injector.registerLazySingleton<ActorsRepository>(() => ActorRepositoryImpl(ActorMovieDbDatasource()));
     injector.registerLazySingleton<LocalStorageRepository>(() => LocalStorageRepositoryImpl(IsarDatasource()));
     injector.registerLazySingleton<MoviesRepository>(() => MovieRepositoryImpl(MoviedbDatasource()));
-    
   }
 }
 

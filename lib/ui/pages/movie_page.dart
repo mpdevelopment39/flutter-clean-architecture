@@ -9,7 +9,7 @@ import 'package:lottie/lottie.dart';
 import 'package:sizer/sizer.dart';
 import '../../domain/entities/movie.dart';
 
-
+//* Clase para gestionar la UI de la Página de detalle de una película
 class MoviePage extends ConsumerStatefulWidget {
   static const name = 'movie-screen';
   final String movieId;

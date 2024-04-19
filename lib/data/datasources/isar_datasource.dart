@@ -21,7 +21,7 @@ class IsarDatasource extends LocalStorageDatasource {
       .idEqualTo(movie.id)
       .findFirst();
 
-    if ( favoriteMovie != null ) {
+    if(favoriteMovie != null) {
       injector<Isar>().writeTxnSync(() => injector<Isar>().movies.deleteSync( favoriteMovie.isarId! ));
       return;
     }
