@@ -3,8 +3,6 @@ import '../../../app/injector.dart';
 import '../../../domain/entities/actor.dart';
 import '../../../domain/repositories/actors_repository.dart';
 
-typedef GetActorsCallback = Future<List<Actor>>Function(String movieId);
-
 class ActorsByMovieNotifier extends StateNotifier<Map<String,List<Actor>>> {
   ActorsByMovieNotifier(): super({});
   
@@ -12,7 +10,6 @@ class ActorsByMovieNotifier extends StateNotifier<Map<String,List<Actor>>> {
 
   Future<void> loadActors(String movieId) async {
     if(state[movieId] != null) return;
-
     final List<Actor> actors = await _actorsRepository.getActorsByMovie(movieId);
     state = {...state, movieId: actors};
   }

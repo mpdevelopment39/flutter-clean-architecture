@@ -1,6 +1,6 @@
+import 'package:flutter_clean_architecture_demo/domain/repositories/movies_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../app/injector.dart';
-import '../../data/repositories/movie_repository_impl.dart';
 import '../../domain/entities/actor.dart';
 import '../../domain/entities/movie.dart';
 import '../../domain/repositories/local_storage_repository.dart';
@@ -32,24 +32,20 @@ final isFavoriteProvider = FutureProvider.family.autoDispose((ref, int movieId) 
 });
 
 //* Movies providers
-final movieRepositoryProvider = Provider((ref) {
-  return MovieRepositoryImpl();
-});
-
 final nowPlayingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
-  return MoviesNotifier(fetchMoreMovies: ref.watch(movieRepositoryProvider).getNowPlaying);
+  return MoviesNotifier(fetchMoreMovies: injector<MoviesRepository>().getNowPlaying);
 });
 
 final popularMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
-  return MoviesNotifier(fetchMoreMovies: ref.watch(movieRepositoryProvider).getPopular);
+  return MoviesNotifier(fetchMoreMovies: injector<MoviesRepository>().getPopular);
 });
 
 final upcomingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
-  return MoviesNotifier(fetchMoreMovies: ref.watch(movieRepositoryProvider).getUpcoming);
+  return MoviesNotifier(fetchMoreMovies: injector<MoviesRepository>().getUpcoming);
 });
 
 final topRatedMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
-  return MoviesNotifier(fetchMoreMovies: ref.watch(movieRepositoryProvider).getTopRated);
+  return MoviesNotifier(fetchMoreMovies: injector<MoviesRepository>().getTopRated);
 });
 
 final initialLoadingProvider = Provider<bool>((ref) {
