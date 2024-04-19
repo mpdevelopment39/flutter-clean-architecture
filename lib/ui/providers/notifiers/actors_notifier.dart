@@ -1,16 +1,16 @@
+import 'package:flutter_clean_architecture_demo/domain/managers/actors_manager.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../app/injector.dart';
 import '../../../domain/entities/actor.dart';
-import '../../../domain/repositories/actors_repository.dart';
 
 class ActorsByMovieNotifier extends StateNotifier<Map<String,List<Actor>>> {
   ActorsByMovieNotifier(): super({});
   
-  final ActorsRepository _actorsRepository = injector<ActorsRepository>();
+  final ActorsManager _actorsManager = injector<ActorsManager>();
 
-  Future<void> loadActors(String movieId) async {
+  Future<void> getActorsByMovie(String movieId) async {
     if(state[movieId] != null) return;
-    final List<Actor> actors = await _actorsRepository.getActorsByMovie(movieId);
+    final List<Actor> actors = await _actorsManager.getActorsByMovie(movieId);
     state = {...state, movieId: actors};
   }
 }

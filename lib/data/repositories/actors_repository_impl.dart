@@ -6,7 +6,7 @@ import '../../domain/repositories/actors_repository.dart';
 import '../mappers/actor_mapper.dart';
 import '../models/moviedb/credits_response.dart';
 
-class ActorRepositoryImpl extends ActorsRepository {
+class ActorsRepositoryImpl extends ActorsRepository {
   final Dio _dio = injector<DioMovies>().dio;
   
   @override

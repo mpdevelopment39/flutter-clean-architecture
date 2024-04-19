@@ -23,5 +23,4 @@ Future<void> main() async {
   );
 }
 
-//TODO Revisar arquitectura => Casos de uso / managers...
 //TODO Documentar Readme

@@ -1,16 +1,16 @@
 import 'package:flutter_clean_architecture_demo/app/injector.dart';
-import 'package:flutter_clean_architecture_demo/domain/repositories/movies_repository.dart';
+import 'package:flutter_clean_architecture_demo/domain/managers/movies_manager.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../domain/entities/movie.dart';
 
 class MovieMapNotifier extends StateNotifier<Map<String,Movie>> {
   MovieMapNotifier(): super({});
 
-  final MoviesRepository _moviesRepository = injector<MoviesRepository>();
+  final MoviesManager _moviesManager = injector<MoviesManager>();
 
-  Future<void> loadMovie(String movieId) async {
+  Future<void> getMovieById(String movieId) async {
     if(state[movieId] != null) return;
-    final movie = await _moviesRepository.getMovieById(movieId);
+    final movie = await _moviesManager.getMovieById(movieId);
     state = {...state, movieId: movie};
   }
 }
