@@ -1,9 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../app/injector.dart';
-import '../../data/datasources/actor_moviedb_datasource.dart';
-import '../../data/datasources/isar_datasource.dart';
-import '../../data/datasources/moviedb_datasource.dart';
 import '../../data/repositories/actor_repository_impl.dart';
 import '../../data/repositories/local_storage_repository_impl.dart';
 import '../../data/repositories/movie_repository_impl.dart';
@@ -17,7 +12,7 @@ import 'notifiers/storage_movies_notifier.dart';
 
 //* Storage providers
 final localStorageRepositoryProvider = Provider((ref) {
-  return LocalStorageRepositoryImpl(injector<IsarDatasource>());
+  return LocalStorageRepositoryImpl();
 });
 
 final favoriteMoviesProvider = StateNotifierProvider<StorageMoviesNotifier,Map<int,Movie>>((ref) {
@@ -26,7 +21,7 @@ final favoriteMoviesProvider = StateNotifierProvider<StorageMoviesNotifier,Map<i
 
 //* Actors providers
 final actorsRepositoryProvider = Provider((ref) {
-  return ActorRepositoryImpl(injector<ActorMovieDbDatasource>());
+  return ActorRepositoryImpl();
 });
 
 final actorsByMovieProvider = StateNotifierProvider<ActorsByMovieNotifier, Map<String, List<Actor>>>((ref) {
@@ -46,7 +41,7 @@ final isFavoriteProvider = FutureProvider.family.autoDispose((ref, int movieId) 
 
 //* Movies providers
 final movieRepositoryProvider = Provider((ref) {
-  return MovieRepositoryImpl(injector<MoviedbDatasource>());
+  return MovieRepositoryImpl();
 });
 
 final nowPlayingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {

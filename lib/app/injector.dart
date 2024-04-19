@@ -1,7 +1,4 @@
 import 'package:flutter_clean_architecture_demo/app/helpers.dart';
-import 'package:flutter_clean_architecture_demo/data/datasources/actor_moviedb_datasource.dart';
-import 'package:flutter_clean_architecture_demo/data/datasources/isar_datasource.dart';
-import 'package:flutter_clean_architecture_demo/data/datasources/moviedb_datasource.dart';
 import 'package:flutter_clean_architecture_demo/data/repositories/actor_repository_impl.dart';
 import 'package:flutter_clean_architecture_demo/data/repositories/local_storage_repository_impl.dart';
 import 'package:flutter_clean_architecture_demo/data/repositories/movie_repository_impl.dart';
@@ -41,15 +38,10 @@ class Injector {
     injector.registerSingleton<DioMovies>(DioMovies());
     injector.registerLazySingleton<Helpers>(() => Helpers());
     
-    //* DATASOURCES
-    injector.registerSingleton<ActorMovieDbDatasource>(ActorMovieDbDatasource());
-    injector.registerSingleton<IsarDatasource>(IsarDatasource());
-    injector.registerSingleton<MoviedbDatasource>(MoviedbDatasource());
-
     //* REPOSITORIES
-    injector.registerLazySingleton<ActorsRepository>(() => ActorRepositoryImpl(ActorMovieDbDatasource()));
-    injector.registerLazySingleton<LocalStorageRepository>(() => LocalStorageRepositoryImpl(IsarDatasource()));
-    injector.registerLazySingleton<MoviesRepository>(() => MovieRepositoryImpl(MoviedbDatasource()));
+    injector.registerLazySingleton<ActorsRepository>(() => ActorRepositoryImpl());
+    injector.registerLazySingleton<LocalStorageRepository>(() => LocalStorageRepositoryImpl());
+    injector.registerLazySingleton<MoviesRepository>(() => MovieRepositoryImpl());
   }
 }
 
