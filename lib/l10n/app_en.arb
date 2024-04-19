@@ -1,0 +1,11 @@
+{
+    "app_name" : "Movies Clean Architecture",
+    "title_blockbusters" : "Blockbusters",
+    "movies_title" : "Movies",
+    "favorites_title" : "Favorites",
+    "in_cinemas_title" : "In cinemas",
+    "coming_soon_title" : "Coming soon",
+    "popular_title" : "Popular",
+    "top_rated_title" : "Top rated",
+    "no_favorites" : "No favorite movies yet"
+}
