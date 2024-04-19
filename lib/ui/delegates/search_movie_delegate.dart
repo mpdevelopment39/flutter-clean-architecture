@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter_clean_architecture_demo/app/helpers.dart';
 import 'package:sizer/sizer.dart';
+import '../../app/injector.dart';
 import '../../app/theme.dart';
 import '../../domain/entities/movie.dart';
 
@@ -150,8 +151,8 @@ class _MovieItem extends StatelessWidget {
                       Icon(Icons.star_half_rounded, color: AppTheme.kMoviesYellow),
                       const SizedBox(width: 5),
                       Text( 
-                        Helpers.formatNumber(movie.voteAverage, 1),
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.yellow.shade900),
+                        injector<Helpers>().formatNumber(movie.voteAverage, 1),
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppTheme.kMoviesYellow),
                       ),
                     ],
                   )

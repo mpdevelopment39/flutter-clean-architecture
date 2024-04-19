@@ -4,6 +4,7 @@ import 'package:flutter_clean_architecture_demo/app/constants.dart';
 import 'package:flutter_clean_architecture_demo/app/helpers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import '../../../app/injector.dart';
 import '../../../app/theme.dart';
 import '../../../domain/entities/movie.dart';
 
@@ -130,7 +131,7 @@ class _Item extends StatelessWidget {
                 const SizedBox(width: 3),
                 Text(movie.voteAverage.toStringAsFixed(1), style: textStyles.bodyMedium?.copyWith(color: AppTheme.kMoviesYellow)),
                 const Spacer(),
-                Text(Helpers.formatNumber(movie.popularity), style: textStyles.bodySmall),
+                Text(injector<Helpers>().formatNumber(movie.popularity), style: textStyles.bodySmall),
               ],
             ),
           )

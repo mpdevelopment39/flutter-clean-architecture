@@ -19,7 +19,7 @@ class Helpers {
     return string[0].toLowerCase() + string.substring(1);
   }
 
-  static String formatNumber(double number, [int decimals = 0]) {
+  String formatNumber(double number, [int decimals = 0]) {
     final formattedNumber = NumberFormat.compactCurrency(
       decimalDigits: decimals,
       symbol: '',
