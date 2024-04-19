@@ -17,6 +17,10 @@ class AppTheme {
   static const Color kMoviesBlackIntermediate = Colors.black54;
   static const Color kMoviesTransparent = Colors.transparent;
   static const Color kMoviesRed = Color(0xFFFF4949);
+  static const Color kMoviesPurpleLight = Color.fromARGB(255, 224, 204, 234);
+  static const Color kMoviesRedLight = Color.fromARGB(255, 234, 204, 204);
+  static const Color kMoviesGreenLight = Color.fromARGB(255, 214, 234, 204);
+  static const Color kMoviesOrangeLight = Color.fromARGB(255, 234, 230, 204);
   static Color kMoviesYellow = Colors.yellow.shade800;
 
 }

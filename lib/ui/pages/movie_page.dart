@@ -11,7 +11,7 @@ import '../../domain/entities/movie.dart';
 
 //* Clase para gestionar la UI de la Página de detalle de una película
 class MoviePage extends ConsumerStatefulWidget {
-  static const name = 'movie-screen';
+  static const name = 'movie-page';
   final String movieId;
 
   const MoviePage({super.key,required this.movieId});
@@ -120,7 +120,10 @@ class _ActorsByMovie extends ConsumerWidget {
     if(actorsByMovie[movieId] == null) {
       return const SizedBox(
       height: 300,
-      child: CircularProgressIndicator(strokeWidth: 2)
+      child: Center(child: SizedBox(
+        height: 50,
+        width: 50,
+        child: CircularProgressIndicator(strokeWidth: 2)))
       );
     }
     final actors = actorsByMovie[movieId]!;

@@ -23,7 +23,5 @@ Future<void> main() async {
   );
 }
 
-//TODO Meter un carrousel antes de la home para que carguen las dependencias antes de cargar la home
-//TODO Revisar carga inyección de dependencias de Isar
 //TODO Revisar arquitectura => Casos de uso / managers...
 //TODO Documentar Readme

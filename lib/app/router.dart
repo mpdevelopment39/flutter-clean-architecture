@@ -1,11 +1,17 @@
+import 'package:flutter_clean_architecture_demo/ui/pages/carrousel_page.dart';
 import 'package:flutter_clean_architecture_demo/ui/pages/home_page.dart';
 import 'package:flutter_clean_architecture_demo/ui/pages/movie_page.dart';
 import 'package:go_router/go_router.dart';
 
 //* Clase para gestionar las diferentes rutas del proyecto a la hora de navegar entre pantallas
 final appRouter = GoRouter(
-  initialLocation: '/home/0',
+  initialLocation: '/carrousel',
   routes: [
+    GoRoute(
+      path: '/carrousel',
+      name: CarrouselPage.name,
+      builder: (_, __) => const CarrouselPage(),
+    ),
     GoRoute(
       path: '/home/:page',
       name: HomePage.name,

@@ -7,5 +7,10 @@
     "coming_soon_title" : "Próximamente",
     "popular_title" : "Populares",
     "top_rated_title" : "Mejor calificadas",
-    "no_favorites" : "Todavía no tienes películas favoritas"
+    "no_favorites" : "Todavía no tienes películas favoritas",
+    "carrousel_title1": "Descubre los nuevos exitos de cartelera",
+    "carrousel_title2": "Guarda tus películas favoritas",
+    "carrousel_title3": "Encuentra la película que buscas",
+    "carrousel_title4": "Comprueba el reparto de actores",
+    "carrousel_button": "Comenzar"
 }

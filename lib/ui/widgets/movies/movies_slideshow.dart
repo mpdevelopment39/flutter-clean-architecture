@@ -34,7 +34,7 @@ class MoviesBlockbusters extends StatelessWidget {
               margin: const EdgeInsets.only(top: 0),
               builder: DotSwiperPaginationBuilder(
                 activeColor: AppTheme.colorScheme.tertiary,
-                color: AppTheme.colorScheme.tertiaryContainer,
+                color: AppTheme.kMoviesBlack.withOpacity(0.4),
                 size: 8,
                 activeSize: 12
               )

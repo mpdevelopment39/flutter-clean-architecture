@@ -5,7 +5,7 @@ import '../widgets/shared/custom_bottom_navigation.dart';
 
 //* Clase para gestionar la UI de la Página principal con las 2 vistas de películas y favoritos
 class HomePage extends StatelessWidget {
-  static const name = 'home-screen';
+  static const name = 'home-page';
   final int pageIndex;
 
   const HomePage({super.key,required this.pageIndex});

@@ -7,5 +7,10 @@
     "coming_soon_title" : "Coming soon",
     "popular_title" : "Popular",
     "top_rated_title" : "Top rated",
-    "no_favorites" : "No favorite movies yet"
+    "no_favorites" : "No favorite movies yet",
+    "carrousel_title1": "Discover the new blockbusters",
+    "carrousel_title2": "Save your favorite movies",
+    "carrousel_title3": "Find the movie you are looking for",
+    "carrousel_title4": "Check the cast of actors",
+    "carrousel_button": "Start"
 }
