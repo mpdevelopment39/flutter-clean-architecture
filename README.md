@@ -53,6 +53,11 @@ A continuación se muestran diferentes gifs con el resultado del proyecto:
 </p>
 <p align="center">
     <img src="/assets/readme/gif1.gif" width="310" height="640">
+    <img src="/assets/readme/gif2.gif" width="310" height="640">
+    <img src="/assets/readme/gif3.gif" width="310" height="640">
+    <img src="/assets/readme/gif4.gif" width="310" height="640">
+    <img src="/assets/readme/gif5.gif" width="310" height="640">
+    
 </p>
 
 
