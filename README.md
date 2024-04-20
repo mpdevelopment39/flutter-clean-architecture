@@ -1,12 +1,12 @@
 # flutter_clean_architecture_demo
 
-  A nivel arquitectura he decidido implementar Clean Architecture de una manera sencilla con su correspondiente abstracción de capas.
+  A nivel arquitectura he decidido implementar <strong>Clean Architecture</strong> de una manera sencilla con su correspondiente abstracción de capas.
 
-  - UI/Presentation. Donde definimos todo lo que tenga que ver con la interfaz de la aplicación, páginas, componentes/widgets, gestión de estados con riverpod...
-  - Domain. Donde definimos nuestras entidades de dominio que utilizaremos a lo largo de la aplicación así como los repositorios y los managers(casos de uso). He decidido crear la capa de managers para una gestión más cómoda. Si consideramos que el proyecto se hace muy grande podríamos evitar esta agrupación y gestionar directamente los usecases agrupados en carpetas por funcionalidad.
-  - Data. Donde definimos la implementación de nuestros repositorios (Obtención de datos de backend/apis,bbdd,preferencias locales...), las entidades o modelos de data como las respuestas de dichas fuentes de datos y los mappers para convertir las entidades de data en entidades de dominio que utilizaremos en nuestra app.
+  - <strong>UI/Presentation.</strong> Donde definimos todo lo que tenga que ver con la interfaz de la aplicación, páginas, componentes/widgets, gestión de estados con riverpod...
+  - <strong>Domain.</strong> Donde definimos nuestras entidades de dominio que utilizaremos a lo largo de la aplicación así como los repositorios y los managers(casos de uso). He decidido crear la capa de managers para una gestión más cómoda. Si consideramos que el proyecto se hace muy grande podríamos evitar esta agrupación y gestionar directamente los usecases agrupados en carpetas por funcionalidad.
+  - <strong>Data.</strong> Donde definimos la implementación de nuestros repositorios (Obtención de datos de backend/apis,bbdd,preferencias locales...), las entidades o modelos de data como las respuestas de dichas fuentes de datos y los mappers para convertir las entidades de data en entidades de dominio que utilizaremos en nuestra app.
 
-  NOTA: He decidido no crear una entidad más de abstracción como los datasources con sus implementaciones para mantener el proyecto lo más sencillo posible, pero si nos vieramos en una situación en la cual para obtener datos podemos tener diversas fuentes u origenes como por ejemplo un backend o una bbdd local con información cacheada podríamos tener esta capa y definir en cada momento que datasource o fuente de datos queremos implementar en nuestros repositorios.
+  <strong>NOTA:</strong> He decidido no crear una entidad más de abstracción como los datasources con sus implementaciones para mantener el proyecto lo más sencillo posible, pero si nos vieramos en una situación en la cual para obtener datos podemos tener diversas fuentes u origenes como por ejemplo un backend o una bbdd local con información cacheada podríamos tener esta capa y definir en cada momento que datasource o fuente de datos queremos implementar en nuestros repositorios.
   
   Para la escrítura de los comentarios del código suelo utilizar la extensión Better Comments de VS Code ya que resulta muy visual y cómoda a la hora de leer dichos comentarios, ya que nos permite tener diversos formatos.
 
@@ -28,9 +28,6 @@
     * Para realizar componente de slider de películas.
   * [<b>device_preview</b>](https://pub.dev/packages/device_preview)
     * Para realizar pruebas de interfaz en cualquier dispositivo.
-
-<br>
-<br>
 
 <h2>Librerías utilizadas para implementación de funcionalidad</h2>
 
@@ -60,5 +57,6 @@ A continuación se muestran diferentes gifs con el resultado del proyecto:
 
 
 <h2>Pasos para ejecutar el proyecto</h2>
-1. Duplicar el archivo .env.template y renombrarlo como .env
-2. Rellenar variables de entorno con sus valores correspondientes
+
+ 1. Duplicar el archivo .env.template y renombrarlo como .env
+ 2. Rellenar variables de entorno con sus valores correspondientes
