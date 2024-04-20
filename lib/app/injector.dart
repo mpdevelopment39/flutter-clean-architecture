@@ -9,7 +9,6 @@ import 'package:flutter_clean_architecture_demo/domain/repositories/local_storag
 import 'package:flutter_clean_architecture_demo/domain/repositories/movies_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:isar/isar.dart';
-import 'package:logger/logger.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../domain/entities/movie.dart';
@@ -21,16 +20,7 @@ final GetIt injector = GetIt.instance;
 
 class Injector {
   Injector(){
-    injector.allowReassignment = true;
-    injector.registerLazySingleton<Logger>(() => Logger(printer: PrettyPrinter(
-      methodCount: 2, 
-      errorMethodCount: 8,
-      lineLength: 120,
-      colors: true,
-      printEmojis: true,
-      printTime: true,
-    )));
-    
+    injector.allowReassignment = true;    
     injector.registerSingletonAsync<Isar>(() async {
       final dir = await getApplicationDocumentsDirectory();
       return await Isar.open(
