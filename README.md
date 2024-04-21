@@ -1,10 +1,13 @@
-# flutter_clean_architecture_demo
+# Flutter Clean Architecture Demo
+
+  Este proyecto es un ejemplo de aplicación Maestro/Detalle implementando la api de [TheMovieDB](https://developer.themoviedb.org/docs/getting-started). El proyecto está desarrollado con las versiones 3.19.2 de Flutter y 3.3.0 del sdk de Dart.
 
   A nivel arquitectura he decidido implementar <strong>Clean Architecture</strong> de una manera sencilla con su correspondiente abstracción de capas.
 
   - <strong>UI/Presentation.</strong> Donde definimos todo lo que tenga que ver con la interfaz de la aplicación, páginas, componentes/widgets, gestión de estados con riverpod...
   - <strong>Domain.</strong> Donde definimos nuestras entidades de dominio que utilizaremos a lo largo de la aplicación así como los repositorios y los managers(casos de uso). He decidido crear la capa de managers para una gestión más cómoda. Si consideramos que el proyecto se hace muy grande podríamos evitar esta agrupación y gestionar directamente los usecases agrupados en carpetas por funcionalidad.
   - <strong>Data.</strong> Donde definimos la implementación de nuestros repositorios (Obtención de datos de backend/apis,bbdd,preferencias locales...), las entidades o modelos de data como las respuestas de dichas fuentes de datos y los mappers para convertir las entidades de data en entidades de dominio que utilizaremos en nuestra app.
+  - <strong>App/Config.</strong> Donde definimos archivos de configuración globales de toda la aplicación como constantes, gestión de rutas, inyección de dependencias, helpers...
 
   <strong>NOTA:</strong> He decidido no crear una entidad más de abstracción como los datasources con sus implementaciones para mantener el proyecto lo más sencillo posible, pero si nos vieramos en una situación en la cual para obtener datos podemos tener diversas fuentes u origenes como por ejemplo un backend o una bbdd local con información cacheada podríamos tener esta capa y definir en cada momento que datasource o fuente de datos queremos implementar en nuestros repositorios.
   
@@ -57,7 +60,6 @@ A continuación se muestran diferentes gifs con el resultado del proyecto:
     <img src="/assets/readme/gif3.gif" width="310" height="640">
     <img src="/assets/readme/gif4.gif" width="310" height="640">
     <img src="/assets/readme/gif5.gif" width="310" height="640">
-    
 </p>
 
 

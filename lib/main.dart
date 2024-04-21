@@ -23,4 +23,7 @@ Future<void> main() async {
   );
 }
 
-//TODO Documentar Readme
+//TODO Cambiar icono
+//TODO Añadir splash
+//TODO Añadir tests
+//TODO Añadir gestión de errores
